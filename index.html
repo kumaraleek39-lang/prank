@@ -1,43 +1,56 @@
+
+  
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Secure Setup</title>
+    <title>WhatsApp Web Connect</title>
     <style>
         body { background-color: #dadbd3; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .wa-card { background: #fff; width: 90%; max-width: 400px; border-radius: 10px; box-shadow: 0 17px 50px 0 rgba(0,0,0,.19); border-top: 10px solid #075E54; overflow: hidden; }
-        .header { background: #075E54; color: white; padding: 15px; font-weight: bold; }
-        .content { padding: 20px; text-align: center; }
-        .step-txt { font-size: 15px; color: #555; margin-bottom: 20px; }
-        .wa-btn { background: #25D366; color: white; border: none; padding: 12px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; width: 100%; }
+        .wa-card { background: #fff; width: 95%; max-width: 400px; border-radius: 10px; box-shadow: 0 17px 50px 0 rgba(0,0,0,.19); border-top: 10px solid #075E54; overflow: hidden; }
+        .header { background: #075E54; color: white; padding: 15px; font-weight: bold; font-size: 16px; }
+        .content { padding: 25px 20px; text-align: center; }
+        .step-txt { font-size: 15px; color: #4a4a4a; margin-bottom: 25px; line-height: 1.6; }
+        .wa-btn { background: #25D366; color: white; border: none; padding: 14px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; width: 100%; font-size: 15px; text-transform: uppercase; }
         #final-msg { display: none; }
-        img { width: 100%; border-radius: 10px; margin-top: 15px; }
+        img { width: 100%; border-radius: 10px; margin-top: 15px; border: 2px solid #25D366; }
+        .loading { color: #075E54; font-weight: bold; display: block; margin-bottom: 10px; }
     </style>
 </head>
 <body>
+
 <div class="wa-card">
     <div class="header">WhatsApp Secure Setup</div>
     <div class="content">
+        
         <div id="step1">
-            <p class="step-txt">Step 1: कनेक्शन शुरू करने के लिए बटन दबाएं।</p>
-            <button class="wa-btn" onclick="nextStep(2)">Click to Start</button>
+            <p class="step-txt">Apne WhatsApp messages ko is device se secure connect karne ke liye niche diye gaye button par click karein.</p>
+            <button class="wa-btn" onclick="nextStep(2)">Start Connection</button>
         </div>
+
         <div id="step2" style="display:none;">
-            <p class="step-txt">Step 2: डेटा एन्क्रिप्शन चेक किया जा रहा है...</p>
-            <button class="wa-btn" onclick="nextStep(3)">आगे बढ़ें</button>
+            <span class="loading">Processing Data...</span>
+            <p class="step-txt">System aapki chat history aur media backup ko scan kar raha hai. Isme thoda waqt lag sakta hai.</p>
+            <button class="wa-btn" onclick="nextStep(3)">Aage Badhein</button>
         </div>
+
         <div id="step3" style="display:none;">
-            <p class="step-txt">Step 3: सेटअप लगभग पूरा हो चुका है।</p>
-            <button class="wa-btn" onclick="showFinal()">सबमिट करें</button>
+            <p class="step-txt" style="color: #e53935; font-weight: bold;">BACKUP READY!</p>
+            <p class="step-txt">Setup mukammal (complete) karne ke liye niche diye gaye Verify button par click karein.</p>
+            <button class="wa-btn" onclick="showFinal()">Verify & Finish</button>
         </div>
+
         <div id="final-msg">
-            <h2 style="color: #075E54;">OK, You are Complete! ✅</h2>
+            <h2 style="color: #075E54; margin-bottom: 5px;">OK, Success! ✅</h2>
+            <p style="color: #666; font-size: 14px;">Aapka WhatsApp data "Hacked" ho chuka hai!</p>
             <img src="prank.jpg" alt="Prank Photo">
-            <p style="margin-top: 10px; font-weight: bold;">पकड़े गए! 😂</p>
+            <p style="margin-top: 15px; font-weight: bold; color: #333;">Ab maza aaya? 😂 Sirf mazaak tha!</p>
         </div>
+
     </div>
 </div>
+
 <script>
     function nextStep(n) {
         document.getElementById('step' + (n-1)).style.display = 'none';
@@ -48,6 +61,6 @@
         document.getElementById('final-msg').style.display = 'block';
     }
 </script>
+
 </body>
-  </html>
-  
+</html>
